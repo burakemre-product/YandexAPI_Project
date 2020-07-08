@@ -1,0 +1,191 @@
+
+@mixin button() {
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    float: right;
+    padding: 8px 16px 8px 16px;
+    margin-top: 10px;
+    background-color: rgb(52, 73, 94);
+    border-color: rgba(253, 254, 254, 0.25);
+    border-width: 0.1px;
+    border-radius: 2px;
+
+    &:hover {
+        background: #16222A;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #3A6073, #16222A);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          
+    }
+}
+
+
+%frame-part {
+    border-style: solid;
+    border-color: rgba(253, 254, 254, 0.25);
+    border-width: 0.1px;
+    border-radius: 2px;
+    box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 90%;
+    padding: 10px;            
+
+}
+
+html {
+    // text-align: center;
+    background-color: rgb(23, 32, 42);
+    
+    // font:arial;
+    font-size: 13px;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100vw;
+    height: 100vh; */
+    width: 100%;
+    height: 100%;
+
+    #frame {
+        width: 70vw;
+        height: auto;
+        color: white;
+        border-style: solid;
+        border-width: 5px;
+        border-color: rgb(28, 40, 51);
+        border-radius: 3px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        display: grid;
+        grid-template-columns: auto;
+        padding: 10px;
+        box-shadow: 10px 10px 46px 0px rgba(81, 110, 103, 1);   
+
+        
+
+        header {
+            @extend %frame-part;
+            // margin:15px; 
+            display: block;
+            justify-content: center;
+            text-align: center;
+            background-color: rgb(52, 73, 94);
+            opacity: 0.7;
+            font-size: 2rem;
+            background: #16222A;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #3A6073, #16222A);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            
+               
+        }
+
+       #form-container {
+            @extend %frame-part;
+
+            .form-row{
+                margin-bottom: 30px;
+            
+           
+                .form-col-25 {
+                    float: left;
+                    width: 25%;
+                    padding: 4px 5px 0px 25px;
+                    margin-bottom: 0px;
+                    font-size: 1.2rem;
+                    font: 400 1.2rem Arial;
+        
+                    
+                }
+                    
+                .form-col-75 {
+                    float: left;
+                    width: 75%;
+                    margin-bottom: 3px;            
+                    font-size: 1.2rem;
+                    border-color: rgba(253, 254, 254, 0.25);
+                    border-width: 0.1px;
+                    border-radius: 2px;
+        
+                    ::placeholder{
+                        font: 400 1.2rem Arial;
+                    }
+        
+                    
+                }
+        
+                input, textarea, select {
+                    padding: 2px 7px 2px 7px;
+                    font: inherit;
+                    font: 400 1.2rem Arial;
+                }
+                    
+                #select-language{
+                    padding-left: 4px;
+                }
+        
+               
+        
+        
+            }
+                
+            .button-container {
+                margin-top: 5px;
+                font-size: 1.3rem;
+                font: 400 1.2rem Arial;
+        
+                input {
+                    @include button
+                }
+                
+            }
+            
+        
+        
+       }
+
+       
+       #flags {
+           @extend %frame-part;
+           width: auto;
+
+
+           img{
+               float: left;
+           }
+
+           h2{
+               display: inline-block;
+               padding: 15px;
+               float: left;    
+            }
+       }
+       
+       
+       #output {
+           @extend %frame-part;
+
+
+       }
+
+
+    }
+}
+
+
+
+
